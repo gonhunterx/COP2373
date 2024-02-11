@@ -17,3 +17,4 @@ plt.title('Max Wind Speed Over Time')
 plt.xlabel('Date')
 plt.ylabel('Max Wind Speed')
 plt.show()
+
