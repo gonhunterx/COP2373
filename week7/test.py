@@ -42,3 +42,9 @@ print(floats.shape)
 print(floats.size)
 # itemsize returns the number of bytes required to store each element 
 print(floats.itemsize)
+
+
+
+print("-" * 30)
+fulled_array = np.full((4, 5), 15)
+print(fulled_array)

@@ -29,7 +29,7 @@ print(full)
 
 print('\n Exercise 7.2 \n')
 numbers = np.arange( *** ).reshape( *** )
-print("numbers array")
+print("numbers array")a
 print(numbers)
 # Answer
 #array([[0, 1],
