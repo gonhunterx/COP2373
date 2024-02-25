@@ -28,28 +28,28 @@ print(full)
 # Exercise 7.2
 
 print('\n Exercise 7.2 \n')
-numbers = np.arange( *** ).reshape( *** )
-print("numbers array")a
+numbers = np.arange(0, 4).reshape(2, 2)
+print("numbers array")
 print(numbers)
 # Answer
 #array([[0, 1],
 #       [2, 3]])
 
-numbersCubed = ***
+numbersCubed = [x**3 for x in numbers]
 print("numbers array cubed")
 print(numbersCubed)
 # Answer
 #array([[ 0,  1],
 #       [ 8, 27]])
 
-numbersPlus7 = ***
+numbersPlus7 = [x + 7 for x in numbers]
 print("numbers array plus 7")
 print(numbersPlus7)
 # Answer
 #array([[ 7,  8],
 #       [ 9, 10]])
 
-numbersTimesTwo = ***
+numbersTimesTwo = [x * 2 for x in numbers]
 print("numbers array times 2")
 print(numbersTimesTwo)
 #Answer
@@ -60,14 +60,15 @@ print(numbersTimesTwo)
 
 print(f'\n Exercise 7.3')
 
-numbers1 = np.arange(2, 19, 2)***
+numbers1 = np.arange(2, 19, 2).reshape(3, 3)
 print(f'numbers1\n {numbers1}')
 # Answer
 #array([[ 2,  4,  6],
 #       [ 8, 10, 12],
 #       [14, 16, 18]])
 
-numbers2 = np.arange(***).reshape(3, 3)
+numbers2 = np.arange(1, 10).reshape(3, 3)
+numbers2 = numbers2[::-1, ::-1]
 print(f'numbers2\n {numbers2}')
 # Answer
 #array([[9, 8, 7],
@@ -75,7 +76,7 @@ print(f'numbers2\n {numbers2}')
 #       [3, 2, 1]])
 
 # fill in product of numbers 1 and numbers 1
-product = ***
+product = numbers1 * numbers2
 print(f'The product is\n {product}')
 # Answer
 #array([[18, 32, 42],
@@ -86,7 +87,7 @@ print(f'The product is\n {product}')
 
 print(f'\n Exercise 7.4')
 
-new_array = np.array([***,***])
+new_array = np.array([[2, 3, 5, 7, 11],[13, 17, 19, 23, 29]])
 
 print(f'New Array is \n {new_array}')
 # Answer
@@ -97,19 +98,23 @@ print(f'New Array is \n {new_array}')
 
 print(f'\n Exercise 7.5')
 
-powers = np.array([2 ** i for i in range(***)]).reshape(***)
-print(f'{powers}')
+# by not adding in a start and stop to range I just have the list comprehension run 6 times then reshape the 
+# array into a 2d array
+powers = np.array([2 ** i for i in range(6)]).reshape(2, 3)
+print(f'Array of powers:\n{powers}')
 # Answer
 #array([[ 1,  2,  4],
 #       [ 8, 16, 32]])
 
-fpowers = powers***
-print(f'{fpowers}')
+fpowers = powers.flatten()
+# flatten creates a deepcopy of the array 
+print(f'Flatten function result:\n{fpowers}')
 # Answer
 #array([ 1,  2,  4,  8, 16, 32])
 
-rpowers = powers***
-print(f'{rpowers}')
+rpowers = powers.ravel()
+# ravel produces a view which is changed if the original array is changed 
+print(f'Ravel function result:\n{rpowers}')
 # Answer
 #array([ 1,  2,  4,  8, 16, 32])
 

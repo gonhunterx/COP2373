@@ -71,3 +71,5 @@ print(set('abc def ghi jkl mno').issuperset('hi mom'))
 nums = list(range(10)) + list(range(5))
 print(nums)
 print(set(nums))
+
+
