@@ -30,6 +30,10 @@ class Game:
             choice = input("Input: ")
             if choice.lower() == "walk":
                 print("You walk further into the dungeon and see a door and a hallway to the left lit by a dim torch...")
+                choice = input("Input (open, walk, exit)")
+                if choice.lower() == "open":
+                    print("You try to open the door and fail...")
+                    
                 
             
                     
