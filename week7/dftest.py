@@ -10,9 +10,8 @@ df = pd.DataFrame(user_data, index=y_axis_labels)
 print(df)
 
 
-weather_df = pd.DataFrame(np.random.rand(10,2)*5,
-                          index=pd.date_range(start="2021-01-01", periods=10),
-                          columns=["Tokyo", "Beijing"])
+test_score_df = pd.DataFrame(user_data,
+                          columns=y_axis_labels)
 
 def rain_condition(v):
     if v < 1.75:
@@ -28,6 +27,14 @@ def make_pretty(styler):
     styler.background_gradient(axis=None, vmin=1, vmax=5, cmap="YlGnBu")
     return styler
 
-print(weather_df)
+def style_test_scores(styler):
+    styler.set_caption("Test Scores")
+    styler.background_gradient(cmaps='Blues')
+    return styler
 
-print(weather_df.loc["2021-01-04":"2021-01-08"].style.pipe(make_pretty))
+
+
+print(test_score_df)
+
+
+# print(test_score_df.loc["2021-01-04":"2021-01-08"].style.pipe(make_pretty))
